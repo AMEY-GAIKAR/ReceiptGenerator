@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-export default function CreateForm() {
+export function CreateForm() {
 
   const [student, setStudent] = useState({
     name: "",
@@ -59,7 +59,7 @@ export default function CreateForm() {
       </div>
       <div className="mb-5">
         <label htmlFor="branch" className="mb-2 block text-sm font-medium">Select your branch</label>
-        <select id="branch" className="block w-full rounded-lg p-2.5 text-sm">
+        <select id="branch" className="block w-full rounded-lg p-2.5 text-sm" value={student.branch} onChange={(e) => setStudent({...student, branch: e.target.value})} >
           <option>CE</option>
           <option>IT</option>
           <option>EXTC</option>
@@ -72,7 +72,7 @@ export default function CreateForm() {
       </div>
       <div className="mb-5">
         <label htmlFor="year" className="mb-2 block text-sm font-medium">Select current year</label>
-        <select id="year" className="block w-full rounded-lg p-2.5 text-sm">
+        <select id="year" className="block w-full rounded-lg p-2.5 text-sm" value={student.year} onChange={(e) => setStudent({...student, year: e.target.value})} >
           <option>FE</option>
           <option>SE</option>
           <option>DSE</option>
@@ -90,7 +90,7 @@ export default function CreateForm() {
       </div>
       <div className="flex justify-center">
         <button type="submit" onClick={onSubmit} className="rounded-lg bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:focus:ring-slate-800">
-          {buttonDisabled ? "" : "Submit"}
+          {buttonDisabled ? "Submit" : "Processing"}
         </button>
       </div>
     </form>
