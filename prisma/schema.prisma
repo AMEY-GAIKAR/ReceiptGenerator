@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  name        String
+  prnNo       String        @id
+  branch      String
+  year        String
+  gender      String
+  category    String
+  Transaction Transaction[]
+}
+
+model Transaction {
+  transactionID String  @id
+  amount        Decimal
+  rollNo        String
+  Student       Student @relation(fields: [rollNo], references: [prnNo])
+
+  @@index([rollNo], map: "Transaction_rollNo_fkey")
+}
