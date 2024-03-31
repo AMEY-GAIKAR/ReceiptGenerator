@@ -119,6 +119,7 @@ export function CreateForm() {
           {buttonDisabled ? "Submit" : "Submit"}
         </button>
         <Link 
+          className="rounded-lg bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:focus:ring-slate-800"
           href={{
             pathname: "/view",
             query: {student: JSON.stringify(student)},
