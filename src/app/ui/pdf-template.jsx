@@ -33,8 +33,8 @@ export function Template({ student }) {
                 <td className="px-6 py-4">{student.gender}</td>
               </tr>
 <tr className="border border-x border-black">
-                <th scope="row" className="whitespace-nowrap border-r border-black px-6 py-4 font-medium">Caste</th>
-                <td className="px-6 py-4">{student.caste}</td>
+                <th scope="row" className="whitespace-nowrap border-r border-black px-6 py-4 font-medium">Category</th>
+                <td className="px-6 py-4">{student.category}</td>
               </tr>
 <tr className="border border-x border-black">
                 <th scope="row" className="whitespace-nowrap border-r border-black px-6 py-4 font-medium">PRN No.</th>
