@@ -1,6 +1,7 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import Link from "next/link"
+// import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export function CreateForm() {
@@ -13,11 +14,11 @@ export function CreateForm() {
     year: "",
     amount: "",
     transactionID: "",
-    caste: "",
+    category: "",
   })
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  // const router = useRouter()
 
   const onSubmit = async () => {
     try {
@@ -30,7 +31,7 @@ export function CreateForm() {
         },
       })
       console.log("Submission successful", response)
-      router.push("/view")
+      // router.push("/view")
     } catch (error) {
       console.log("Submission failed", error)
     } finally {
@@ -70,8 +71,8 @@ export function CreateForm() {
         </select>
       </div>
       <div className="mb-5">
-        <label htmlFor="caste" className="mb-2 block text-sm font-medium">Select your caste</label>
-        <select id="caste" className="block w-full rounded-lg p-2.5 text-sm" value={student.caste} onChange={(e) => setStudent({...student, caste: e.target.value})} >
+        <label htmlFor="category" className="mb-2 block text-sm font-medium">Select your category</label>
+        <select id="category" className="block w-full rounded-lg p-2.5 text-sm" value={student.category} onChange={(e) => setStudent({...student, category: e.target.value})} >
           <option>--</option>
           <option>Open</option>
           <option>SC</option>
@@ -98,7 +99,7 @@ export function CreateForm() {
         <label htmlFor="year" className="mb-2 block text-sm font-medium">Select current year</label>
         <select id="year" className="block w-full rounded-lg p-2.5 text-sm" value={student.year} onChange={(e) => setStudent({...student, year: e.target.value})} >
           <option>--</option>
-          <option>CE</option>
+          <option>FE</option>
           <option>SE</option>
           <option>DSE</option>
           <option>TE</option>
@@ -117,6 +118,13 @@ export function CreateForm() {
         <button type="submit" onClick={onSubmit} className="rounded-lg bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:focus:ring-slate-800">
           {buttonDisabled ? "Submit" : "Submit"}
         </button>
+        <Link 
+          href={{
+            pathname: "/view",
+            query: {student: JSON.stringify(student)},
+          }}
+        >View
+        </Link>
       </div>
     </form>
   )
