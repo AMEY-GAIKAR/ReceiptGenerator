@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-// import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export function CreateForm() {
@@ -18,7 +17,6 @@ export function CreateForm() {
   })
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  // const router = useRouter()
 
   const onSubmit = async () => {
     try {
@@ -31,7 +29,6 @@ export function CreateForm() {
         },
       })
       console.log("Submission successful", response)
-      // router.push("/view")
     } catch (error) {
       console.log("Submission failed", error)
     } finally {
@@ -115,16 +112,13 @@ export function CreateForm() {
         <input type="text" id="transactionID" className="dark:shadow-sm-light block w-full rounded-lg border p-2.5 text-sm text-gray-900 shadow-sm" value={student.transactionID} onChange={(e) => {setStudent({...student, transactionID: e.target.value})}} required />
       </div>
       <div className="flex justify-center">
-        <button type="submit" onClick={onSubmit} className="rounded-lg bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:focus:ring-slate-800">
-          {buttonDisabled ? "Submit" : "Submit"}
-        </button>
         <Link 
           className="rounded-lg bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:focus:ring-slate-800"
           href={{
             pathname: "/view",
             query: {student: JSON.stringify(student)},
           }}
-        >View
+        >Create
         </Link>
       </div>
     </form>
