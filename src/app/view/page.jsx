@@ -1,23 +1,13 @@
 "use client"
 
-// based on catoegory(caste, girls), gender, tfw addjmissions, 
-// dashboard stats basedon caste/ gender, incomplete amount 
-// mysql db 
-// download report in excel of total details(summary)
-
+import { useSearchParams } from "next/navigation"
 import { Template } from "../ui/pdf-template" 
 
 export default function View() {
-  const student = {
-    name: "AMEY GAIKAR",
-    prnNo: "121A8019",
-    branch: "AI&DS",
-    year: "TE",
-    amount: "10022.50",
-    transactionID: "A2N2EYD",
-    gender: "MALE",
-    caste: "OBC"
-  }
+  const searchParams = useSearchParams()
+  const result = searchParams.get('student')
+  console.log(result)
+  const student = JSON.parse(result)
 
   return (
     <Template student={student} />
