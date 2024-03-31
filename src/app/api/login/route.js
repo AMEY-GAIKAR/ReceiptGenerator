@@ -1,4 +1,4 @@
-import { CreateNewStudent, CreateNewTranaction } from "@/app/dbConfig/dbConfig"
+import { CreateNewStudent, CreateNewTranaction } from "@/app/dbMethods/dbMethods"
 import { NextResponse } from "next/server"
 
 export async function POST(req) {
