@@ -1,7 +1,7 @@
-import { CreateForm } from "@/app/ui/form"; 
-
 export default function Home() {
   return (
-      <CreateForm />
+    <div>
+      <h1>hello</h1>
+    </div>  
   );
 }
