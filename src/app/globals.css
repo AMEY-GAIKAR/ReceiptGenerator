@@ -1,3 +1,141 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  nav#navbar {
+    background-color: #F3EDDD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: px; /* Adjust height as needed */
+    margin-right: 10px;
+  }
+  
+  #fee-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5; /* Optional background color */
+  }
+  
+  h2 {
+    margin: 0; /* Remove top margin */
+  }
+  
+  #input-container {
+    background-color: #f8f8f8;
+    padding: 50px; /* Existing padding */
+    border: 3px solid #ddd;
+    margin: 20px auto;  /* Adjust margin values */
+    width: 60%;  /* Adjust width as needed */
+    position: relative;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+    right: 10px;
+  }
+
+
+.buttonClass:hover {
+  background: #5cbf2a
+}
+              
+  
+  button[type="submit"]:hover {
+    background-color: #45A049;
+  }
+  
+  button[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  button[type="reset"]:hover {
+    background-color: #45A049;
+  }
+  
+  label {
+    width: 150px;  /* Adjust label width as needed */
+    display: inline-block;  /* Make labels appear inline */
+  }
+  #year{
+    display: inline-block;  /* Make inputs and select appear inline */
+    width: 100%;  /* Adjust width based on label width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  #branch{
+    display: inline-block;  /* Make inputs and select appear inline */
+    width: 100%;  /* Adjust width based on label width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  #category{
+    display: inline-block;  /* Make inputs and select appear inline */
+    width: 100%;  /* Adjust width based on label width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
